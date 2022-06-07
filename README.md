@@ -27,9 +27,10 @@ We will refact after, i promise... (rrsrsrs)
 # Com docker
   * Instale o Docker
   * Execute o Docker
-  * Execute no terminal: composer install
-  * Execute no terminal: npm install
-  * Descompacte o laradock.rar (ficará assim: "/var/www/laradock/".env)
+  * Dentro da pasta do projeto "/var/www/" (ou na pasta externa ao container):
+    * Execute no terminal: composer install
+    * Execute no terminal: npm install
+  * Descompacte o laradock.rar (ficará assim: "/var/www/laradock/")
   * Acesse a pasta "/var/www/laradock/"
   * Para subir o container com apache:
       * docker-compose up -d apache2 mysql phpmyadmin
