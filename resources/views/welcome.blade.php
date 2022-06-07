@@ -52,7 +52,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Olá amigo! Bem-vindo ao meu 'teste', fique a vontade para navegar.
+                                    Olá amigo! Bem-vindo ao meu teste, fique a vontade para navegar.
                                     <p>
                                         Login: admin@admin.com <br>
                                         Senha: admin
