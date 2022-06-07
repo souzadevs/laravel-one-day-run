@@ -19,7 +19,7 @@ Poderia ser aplicado:
 - Strategy (caso queiram usar outros tipos de datatable no fronend)
 - Decorator (para gerar descontos, como cupons, vales, etc)
 
-Nota: Design Patterns devem ser cautelosamente usados, em extrema necessidade! Verificar uma região do código que realmente necessita é fundamental para otimizar melhor o nosso desenvolvimento. 
+Nota: Design Patterns devem ser cautelosamente usados, em extrema necessidade! Verificar uma região do código que realmente necessita é fundamental para otimizar melhor o nosso tempo. 
 We will refact after, i promise... (rrsrsrs)
 
 # Instalação
