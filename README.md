@@ -32,9 +32,9 @@ We will refact after, i promise... (rrsrsrs)
     * Execute no terminal: npm install
   * Descompacte o laradock.rar (ficará assim: "/var/www/laradock/")
   * Acesse a pasta "/var/www/laradock/"
-  * Para subir o container com apache:
+  * Para subir o container com APACHE:
       * docker-compose up -d apache2 mysql phpmyadmin
-  * Para subir o container com nginx: 
+  * Para subir o container com NGINX: 
       * docker-compose up -d nginx mysql phpmyadmin  
   * Caso execute com apache, renomeie o htaccess para .htaccess 
   * Crie o banco de dados 'my_app' pelo phpMyAdmin (http://127.0.0.1:8083/) (user:'root', password:'root')
