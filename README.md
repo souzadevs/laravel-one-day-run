@@ -20,7 +20,7 @@ Poderia ser aplicado:
 - Decorator (para gerar descontos, como cupons, vales, etc)
 
 Nota: Design Patterns devem ser cautelosamente usados, em extrema necessidade! Verificar uma região do código que realmente necessita é fundamental para otimizar melhor o nosso desenvolvimento. 
-Depois refatora... KKK
+We will refact after, i promise... (rrsrsrs)
 
 # Instalação
 
