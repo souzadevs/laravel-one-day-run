@@ -9,7 +9,7 @@ Você poderá ter um status de cada pedido com um dashboard para ter uma melhor 
 Obs.: O projeto foi concebido usando o Vemto (Brazilian Laravel low code plataform) para gerar os cruds simples. Que também poderia ser feito com InfyOm ou Blueprint.
 Porém, nem tudo são flores. As estórias de usuário precisaram ser desenvolvidas, tanto no backend ou frontend.
 
-Caros devs, desenvolvi ele em 1 (20h) dia (mais 2h de hoje). Gostaria muito de implementar mais features para ficar melhor, mas como trabalho, fico sem tempo. Façam forks e me mandem suas branches para eu fazer pull requests se quiserem participar...
+Caros devs, desenvolvi ele em 22 horas. Gostaria muito de implementar mais features para ficar melhor, mas como trabalho, fico sem tempo. Façam forks e me mandem suas branches para eu fazer pull requests se quiserem participar...
 
 Boas práticas aplicadas:
 - SOLID
