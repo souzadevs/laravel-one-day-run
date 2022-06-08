@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" class="brand-image bg-white img-circle">
-        <span class="brand-text font-weight-light">GIT-Test</span>
+        <span class="brand-text font-weight-light">OneDayRun</span>
     </a>
 
     <!-- Sidebar -->
