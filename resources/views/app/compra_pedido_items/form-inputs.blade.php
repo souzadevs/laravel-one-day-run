@@ -6,7 +6,6 @@
             name="quantidade"
             label="Quantidade"
             value="{{ old('quantidade', ($editing ? $compraPedidoItem->quantidade : '')) }}"
-            max="255"
             placeholder="Quantidade"
             required
         ></x-inputs.number>
