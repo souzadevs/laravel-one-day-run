@@ -9,6 +9,7 @@ use App\Models\CompraPedidoItem;
 use App\Http\Requests\CompraPedidoItemStoreRequest;
 use App\Http\Requests\CompraPedidoItemUpdateRequest;
 use App\Services\CompraPedidoItemService;
+use Symfony\Component\VarDumper\VarDumper;
 
 class CompraPedidoItemController extends Controller
 {
@@ -62,9 +63,19 @@ class CompraPedidoItemController extends Controller
 
         $compraPedidoItem = CompraPedidoItem::create($validated);
 
-        return redirect()
-            ->route('compra-pedido-items.edit', $compraPedidoItem)
-            ->withSuccess(__('crud.common.created'));
+        $compraPedido = $compraPedidoItem->compraPedido;
+
+        $pedidoItens = $compraPedido->compraPedidoItems();
+
+        $total = 0;
+
+        foreach ($pedidoItens->get() as $item) {
+            $total += $item->produto->valor_unitario * $item->quantidade;
+        }
+
+        return [
+            'total' => $total,
+        ];
     }
 
     /**
@@ -93,6 +104,7 @@ class CompraPedidoItemController extends Controller
 
         $produtos = Produto::pluck('codigo_barras', 'id');
         $compraPedidos = CompraPedido::pluck('id', 'id');
+        
 
         return view(
             'app.compra_pedido_items.edit',
@@ -147,6 +159,18 @@ class CompraPedidoItemController extends Controller
     ) {
         $item = CompraPedidoItem::find($request->id);
         $item->delete();
+
+        $pedidoItens = $item->compraPedido->compraPedidoItems();
+
+        $total = 0;
+
+        foreach ($pedidoItens->get() as $item) {
+            $total += $item->produto->valor_unitario * $item->quantidade;
+        }
+
+        return [
+            'total' => $total,
+        ];
     }
 
     /**

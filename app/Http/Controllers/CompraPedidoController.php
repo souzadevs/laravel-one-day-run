@@ -29,10 +29,12 @@ class CompraPedidoController extends Controller
             ->latest()
             ->paginate(5)
             ->withQueryString();
+        
+        
 
         return view(
             'app.compra_pedidos.index',
-            compact('compraPedidos', 'search'),
+            compact('compraPedidos', 'search', 'total'),
         );
     }
 
@@ -46,6 +48,7 @@ class CompraPedidoController extends Controller
 
         $clientes = Cliente::pluck('nome', 'id');
         $compraPedidoStatuses = CompraPedidoStatus::pluck('descricao', 'id');
+        
         
         
         return view(
@@ -92,14 +95,20 @@ class CompraPedidoController extends Controller
     {
         $this->authorize('update', $compraPedido);
 
-        $clientes = Cliente::pluck('nome', 'id');
-        $compraPedidoStatuses = CompraPedidoStatus::pluck('descricao', 'id');
-        $compraPedidoItems = CompraPedidoItem::where("compra_pedido_id", '=', $compraPedido->id)->get();
-        $produtos = Produto::all();
+        $clientes               = Cliente::pluck('nome', 'id');
+        $compraPedidoStatuses   = CompraPedidoStatus::pluck('descricao', 'id');
+        $compraPedidoItems      = CompraPedidoItem::where("compra_pedido_id", '=', $compraPedido->id)->get();
+        $produtos               = Produto::all();
+
+        $total = 0;
+        
+        foreach($compraPedidoItems as $item) {
+            $total += $item->produto->valor_unitario * $item->quantidade;
+        }
 
         return view(
             'app.compra_pedidos.edit',
-            compact('compraPedido', 'clientes', 'compraPedidoStatuses', 'compraPedidoItems', 'produtos'),
+            compact('compraPedido', 'clientes', 'compraPedidoStatuses', 'compraPedidoItems', 'produtos', 'total'),
             
         );
     }

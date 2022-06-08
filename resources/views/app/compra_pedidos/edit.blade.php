@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -42,7 +42,7 @@
                                     Itens
                                 </h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" >
                                 <div class="container-fluid">
                                     <div class="row mb-5">
                                         <div class="col-4">
@@ -130,6 +130,10 @@
                                         </div>
                                     </div>
                                     <script>
+                                        function updateTotal(total) {
+                                            document.getElementById("total-feld").innerHTML = Number(total).toLocaleString('pt-br', {minimumFractionDigits: 2});
+                                        }
+
                                         function remItem(id) {
                                             if(confirm("Tem certeza que deseja excluir?")) {
                                                 axios({
@@ -142,6 +146,7 @@
                                                 notyf.success('Removido com sucesso!')
                                                 let table = $('#compra-pedidos-itens-datatable').DataTable();
                                                 table.ajax.reload();
+                                                updateTotal(response.data.total);
                                             }).catch(response => {
                                                 console.log(response);
                                                 const notyf = new Notyf({
@@ -175,7 +180,10 @@
                                                     notyf.success('Adicionado com sucesso!')
                                                     let table = $('#compra-pedidos-itens-datatable').DataTable();
                                                     table.ajax.reload();
+                                                    
+                                                    updateTotal(response.data.total);
                                                 }).catch(response => {
+                                                   
                                                     const notyf = new Notyf({
                                                         dismissible: true
                                                     })
@@ -185,6 +193,7 @@
                                                 alert("Digite uma quantidade.");
                                             }
                                         }
+
                                         $(document).ready(function() {
                                             $('#compra-pedidos-itens-datatable').DataTable({
                                                 "processing": true,
@@ -256,9 +265,16 @@
 
                                                 ]
                                             });
+
+                                            updateTotal({{$total}})
                                         });
                                     </script>
                                 </div>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button  class="btn btn-info elevation-1">
+                                    <b>Total (R$): </b> <span id="total-feld" style="font-family: 'Quicksand', sans-serif;">{{$total}}</span>
+                                </button>
                             </div>
                         </div>
 
