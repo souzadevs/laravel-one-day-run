@@ -31,7 +31,7 @@
             name="valor_unitario"
             label="Valor Unitario"
             value="{{ old('valor_unitario', ($editing ? $produto->valor_unitario : '')) }}"
-            max="255"
+            max="1000000"
             step="0.01"
             placeholder="Valor Unitario"
             required
