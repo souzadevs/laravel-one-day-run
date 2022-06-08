@@ -34,7 +34,7 @@ class CompraPedidoController extends Controller
 
         return view(
             'app.compra_pedidos.index',
-            compact('compraPedidos', 'search', 'total'),
+            compact('compraPedidos', 'search'),
         );
     }
 
