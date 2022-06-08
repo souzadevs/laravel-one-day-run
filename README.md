@@ -58,6 +58,7 @@ We will refact after, i promise... (rrsrsrs)
         bootstrap/ (etc)
   * Renomeie o htaccess para .htaccess, ou execute no terminal:
       cp htaccess .htaccess
+  * No arquivo htdocs/.env, remova o root do DB_PASSWORD (ficando assim, DB_PASSWORD=)
   * Acesse localhost/phpmyadmin
   * Crie o banco de dados my_app
   * Na pasta "htdocs/" execute no terminal: php artisan migrate:fresh --seed
